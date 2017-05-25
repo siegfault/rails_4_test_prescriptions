@@ -10,7 +10,7 @@ class Project
   end
 
   def total_size
-    @tasks.sum(&:size)
+    tasks.sum(&:size)
   end
 
   def remaining_size
