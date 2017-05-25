@@ -15,12 +15,12 @@ RSpec.describe Project do
 
   it 'marks a project done if its tasks are done' do
     project.tasks << task
-    task.mark_completed
+    task.mark_completed(1.day.ago)
     expect(project).to be_done
   end
 
   describe 'estimates' do
-    let(:done) { Task.new(size: 2, completed: true) }
+    let(:done) { Task.new(size: 2, completed_at: 1.day.ago) }
     let(:small_not_done) { Task.new(size: 1) }
     let(:large_not_done) { Task.new(size: 4) }
 
