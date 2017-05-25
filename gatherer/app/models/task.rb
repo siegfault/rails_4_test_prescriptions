@@ -1,11 +1,4 @@
-class Task
-  attr_accessor :completed_at, :size
-
-  def initialize(size:, completed_at: nil)
-    @size = size
-    @completed_at = completed_at
-  end
-
+class Task < ActiveRecord::Base
   def mark_completed(completed_at=Time.now)
     self.completed_at = completed_at
   end

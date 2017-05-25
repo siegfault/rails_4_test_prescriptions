@@ -1,9 +1,5 @@
-class Project
-  attr_accessor :due_date, :tasks
-
-  def initialize
-    @tasks = []
-  end
+class Project < ActiveRecord::Base
+  has_many :tasks
 
   def done?
     incomplete_tasks.none?
